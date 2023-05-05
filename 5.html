@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+      width: 100px;
+      height: 60px;
+      color: #000;
+      background-color: white;
+      position: relative;
+      top: 0px;
+      line-height: 60px;
+      border-radius: 0%;
+    }
+
+    img {
+      width: 70% !important;
+      height: 50% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=3491032027,432002427&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt=""
+          class="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=3424886005,887372535&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img0.baidu.com/it/u=3349047098,3231381708&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+          alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img2.baidu.com/it/u=1343214394,2480051563&fm=253&fmt=auto&app=138&f=JPEG?w=863&h=500"
+          alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img0.baidu.com/it/u=3502240274,3068468126&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800"
+          alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=2357723577,570108029&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=3453173633,1253365330&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800"
+          alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=2052887693,2887880233&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+          alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://img1.baidu.com/it/u=250092834,3331818381&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281" alt="" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      direction: "vertical",
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          console.log(className);
+          let text = "";
+          switch (index) {
+            case 0:
+              text = "动漫";
+              break;
+            case 1:
+              text = "动漫";
+              break;
+            case 2:
+              text = "动漫";
+              break;
+            case 3:
+              text = "动漫";
+              break;
+            case 4:
+              text = "动漫";
+              break;
+            case 5:
+              text = "动漫";
+              break;
+            case 6:
+              text = "动漫";
+              break;
+            case 7:
+              text = "动漫";
+              break;
+            case 8:
+              text = "动漫";
+              break;
+          }
+          return '<div class="' + className + '">' + text + "</div>";
+        },
+      },
+    });
+    for (i = 0; i < swiper.pagination.bullets.length; i++) {
+      swiper.pagination.bullets[i].onmouseover = function () {
+        this.click();
+      };
+    }
+  </script>
+</body>
+
+</html>
